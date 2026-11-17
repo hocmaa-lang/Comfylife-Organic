@@ -46,7 +46,7 @@ jobs:
       - name: Refresh, verify and publish
         env:
           DATADIVE_API_KEY: ${{ secrets.DATADIVE_API_KEY }}
-          RANKBOARD_COMFYLIFE_PASS: ${{ secrets.RANKBOARD_COMFYLIFE_PASS }}
+
         run: |
           node rankboard/scripts/refresh.js rankboard/config.ci.json --push \
             ${{ inputs.force && '--force' || '' }}

@@ -105,6 +105,16 @@ if (WANT_SEAL) {
     [{ src: 'dashboard.html', as: 'organic.html' }, { src: 'keywords.html', as: 'keywords.html' }];
   for (const item of publish) {
     const file = item.src, out = item.as || item.src;
+    // "open": true ships the plain page with no login gate (client asked for a
+    // link without username + password). Nothing is encrypted, so anyone with
+    // the URL can read it — only use it when the user explicitly asked.
+    if (item.open) {
+      const dest = seal.siteDir ? abs(seal.siteDir) + '/' + out : OUT + '/open_' + out;
+      fs.copyFileSync(OUT + '/' + file, dest);
+      creds[out] = '(open — no login)';
+      console.log(dest + '  OPEN (not sealed)');
+      continue;
+    }
     // A refresh must not mint a new password \u2014 the client already has the old one.
     // passEnv is the CI path (password lives in a secret, never in the repo). A
     // declared passEnv that is empty is a HARD STOP: falling through to a random

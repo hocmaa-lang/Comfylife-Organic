@@ -9,12 +9,18 @@
   "hub": {
     "title": "Comfylife — organic rank dashboards",
     "tabs": [
-      { "label": "Organic rank", "sub": "Keyword positions, day by day",
+      {
+        "label": "Organic rank",
+        "sub": "Keyword positions, day by day",
         "inline": "keywords.html",
-        "note": "<b>Rank only.</b> Where the listings sit in Amazon's organic results — no sales in this view. Data Dive tracks the variation family as one unit, so one rank covers B0G5SL88P9 · B0763MSYLZ · B08HNJ6GGM · B08LQ8T84R. Crossed cells are days the tracker did not run." },
-      { "label": "Summary", "sub": "Top-10 / top-50 counts over time",
+        "note": "<b>Rank only.</b> Where the listings sit in Amazon's organic results — no sales in this view. Data Dive tracks the variation family as one unit, so one rank covers B0G5SL88P9 · B0763MSYLZ · B08HNJ6GGM · B08LQ8T84R. Crossed cells are days the tracker did not run."
+      },
+      {
+        "label": "Summary",
+        "sub": "Top-10 / top-50 counts over time",
         "inline": "dashboard.html",
-        "note": "<b>Rank only.</b> Counts are measured between the first and last day with data." }
+        "note": "<b>Rank only.</b> Counts are measured between the first and last day with data."
+      }
     ]
   },
   "seal": {
@@ -24,13 +30,28 @@
     "gitEmail": "github-actions[bot]@users.noreply.github.com",
     "gitName": "github-actions[bot]",
     "publish": [
-      { "src": "hub.html", "as": "index.html", "passEnv": "RANKBOARD_COMFYLIFE_PASS", "title": "COMFYLIFE — organic rank" },
-      { "src": "keywords.html", "as": "keywords.html", "passEnv": "RANKBOARD_COMFYLIFE_PASS", "title": "COMFYLIFE — keyword rank by day" }
+      {
+        "src": "hub.html",
+        "as": "index.html",
+        "open": true,
+        "title": "COMFYLIFE — organic rank"
+      },
+      {
+        "src": "keywords.html",
+        "as": "keywords.html",
+        "open": true,
+        "title": "COMFYLIFE — keyword rank by day"
+      }
     ]
   },
   "products": [
-    { "key": "letters", "asin": "B0G5SL88P9", "radarId": "07f62c10-ad86-4cfb-9651-6e501f849f81",
+    {
+      "key": "letters",
+      "asin": "B0G5SL88P9",
+      "radarId": "07f62c10-ad86-4cfb-9651-6e501f849f81",
       "name": "Bath Toy Organizer with Letters & Numbers — family: B0G5SL88P9 · B0763MSYLZ · B08HNJ6GGM · B08LQ8T84R",
-      "short": "Letters family", "file": "letters.json" }
+      "short": "Letters family",
+      "file": "letters.json"
+    }
   ]
 }
